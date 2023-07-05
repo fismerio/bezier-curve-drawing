@@ -396,7 +396,7 @@ class Draw {
     this.clearCanvas();
     this.drawingPoints.forEach(point => point.draw(this.context));
     this.curves.forEach(curve => {
-      curve.drawSupportLines(this.context);
+      // curve.drawSupportLines(this.context);
       curve.drawPoints(this.context);
       curve.drawCurve(this.context);
     });
