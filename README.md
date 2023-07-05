@@ -2,6 +2,9 @@
   Bezier Curves Editor
 </h1>
 
+[Try a demo here](https://fismerio.github.io/bezier-curve-drawing/)
+
+![Sample](https://github.com/fismerio/bezier-curve-drawing/assets/8528631/7230d6e6-7577-4fb0-abfb-bd4341fbaf82)
 
 ![Sample Image](https://github-production-user-asset-6210df.s3.amazonaws.com/8528631/250751671-fa6714a4-8050-4f47-acbe-3b489f3f8671.png)
 
@@ -11,7 +14,7 @@
 (https://mentos1386.github.io/bezier-curve-drawing/)
  -->
 
-[Try a demo here](https://fismerio.github.io/bezier-curve-drawing/)
+
 
 <!---
 
