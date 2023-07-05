@@ -87,7 +87,7 @@ class Curve {
     context.beginPath();
     context.strokeStyle = '#E0E1DD';
     context.moveTo(this.startPoint.x, this.startPoint.y);
-    this.controlPoints.forEach(controlPoint => context.lineTo(controlPoint.x, controlPoint.y));
+    // this.controlPoints.forEach(controlPoint => context.lineTo(controlPoint.x, controlPoint.y));
     context.lineTo(this.endPoint.x, this.endPoint.y);
     context.stroke();
   }
