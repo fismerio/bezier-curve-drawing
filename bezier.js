@@ -501,6 +501,8 @@ const CLEAR_BUTTON_ID = 'clear-canvas';
 const SWITCH_QUADRATIC_ID = 'switch-quadratic';
 const SWITCH_CUBIC_ID = 'switch-cubic';
 const SWITCH_TOOL_DRAW_ID = 'switch-draw';
+// where to add undo button and function?
+const SWITCH_TOOL_UNDO_ID = 'switch-undo';
 const SWITCH_TOOL_DELETE_ID = 'switch-delete';
 const SWITCH_TOOL_COLOR_ID = 'switch-color';
 const SWITCH_CONTINUITY_0 = 'switch-continuity-0';
@@ -535,6 +537,7 @@ let drawing = new Draw(canvas, clearButton, QuadraticCurve, colors);
 const switchQuadraticButton = document.getElementById(SWITCH_QUADRATIC_ID);
 const switchCubicButton = document.getElementById(SWITCH_CUBIC_ID);
 const switchDrawButton = document.getElementById(SWITCH_TOOL_DRAW_ID);
+const switchUndoButton = document.getElementById(SWITCH_TOOL_UNDO_ID);
 const switchDeleteButton = document.getElementById(SWITCH_TOOL_DELETE_ID);
 const switchColorButton = document.getElementById(SWITCH_TOOL_COLOR_ID);
 const switchContinuity0Button = document.getElementById(SWITCH_CONTINUITY_0);
@@ -576,6 +579,16 @@ function switchTool(tool) {
       if (activeTool === tool) break;
       activeTool = tool;
       switchDrawButton.className += ' active';
+      switchUndoButton.className = switchUndoButton.className.replace(' active', '');
+      switchDeleteButton.className = switchDeleteButton.className.replace(' active', '');
+      switchColorButton.className = switchColorButton.className.replace(' active', '');
+      drawing.setTool(tool);
+      break;
+    case  'undo': 
+      if (activeTool === tool) break;
+      activeTool = tool;
+      switchUndoButton.className += ' active';
+      switchDrawButton.className = switchDrawButton.className.replace(' active', '');
       switchDeleteButton.className = switchDeleteButton.className.replace(' active', '');
       switchColorButton.className = switchColorButton.className.replace(' active', '');
       drawing.setTool(tool);
@@ -585,6 +598,7 @@ function switchTool(tool) {
       activeTool = tool;
       switchDeleteButton.className += ' active';
       switchDrawButton.className = switchDrawButton.className.replace(' active', '');
+      switchUndoButton.className = switchUndoButton.className.replace(' active', '');
       switchColorButton.className = switchColorButton.className.replace(' active', '');
       drawing.setTool(tool);
       break;
@@ -592,6 +606,7 @@ function switchTool(tool) {
       if (activeTool === tool) break;
       activeTool = tool;
       switchColorButton.className += ' active';
+      switchUndoButton.className = switchUndoButton.className.replace(' active', '');
       switchDeleteButton.className = switchDeleteButton.className.replace(' active', '');
       switchDrawButton.className = switchDrawButton.className.replace(' active', '');
       drawing.setTool(tool);
